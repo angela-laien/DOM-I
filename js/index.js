@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br>Is<br>Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br>Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -40,3 +40,43 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+var naviBar = document.getElementsByTagName("a");
+for (i = 0; i < naviBar.length; i++) {
+  naviBar[i].innerHTML = siteContent["nav"][`nav-item-${i+1}`];
+}
+
+var title = document.querySelector("h1");
+title.innerHTML = siteContent["cta"]["h1"];
+
+var click = document.querySelector("button");
+click.innerHTML = siteContent["cta"]["button"];
+
+var middleImg = document.getElementById("cta-img");
+middleImg.src = siteContent["cta"]["img-src"];
+middleImg.alt = "Image of a code snippet.";
+
+var bodyImgTitle = document.querySelectorAll("h4");
+
+bodyImgTitle[0].innerHTML = siteContent["main-content"]["features-h4"];
+bodyImgTitle[1].innerHTML = siteContent["main-content"]["about-h4"]; 
+bodyImgTitle[2].innerHTML = siteContent["main-content"]["services-h4"]; 
+bodyImgTitle[3].innerHTML = siteContent["main-content"]["product-h4"]; 
+bodyImgTitle[4].innerHTML = siteContent["main-content"]["vision-h4"]; 
+bodyImgTitle[5].innerHTML = siteContent["contact"]["contact-h4"]; 
+
+
+var bodyImgText = document.querySelectorAll("p");
+bodyImgText[0].innerHTML = siteContent["main-content"]["features-content"];
+bodyImgText[1].innerHTML = siteContent["main-content"]["about-content"];
+bodyImgText[2].innerHTML = siteContent["main-content"]["services-content"];
+bodyImgText[3].innerHTML = siteContent["main-content"]["product-content"];
+bodyImgText[4].innerHTML = siteContent["main-content"]["vision-content"];
+bodyImgText[5].innerHTML = siteContent["contact"]["address"];
+bodyImgText[6].innerHTML = siteContent["contact"]["phone"];
+bodyImgText[7].innerHTML = siteContent["contact"]["email"];
+bodyImgText[8].innerHTML = siteContent["footer"]["copyright"];
+
+var thirdImg = document.getElementById("middle-img");
+thirdImg.src = siteContent["main-content"]["middle-img-src"];
+thirdImg.alt = "Image of code snippets across the screen";
