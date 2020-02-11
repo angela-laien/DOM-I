@@ -80,3 +80,18 @@ bodyImgText[8].innerHTML = siteContent["footer"]["copyright"];
 var thirdImg = document.getElementById("middle-img");
 thirdImg.src = siteContent["main-content"]["middle-img-src"];
 thirdImg.alt = "Image of code snippets across the screen";
+
+var naviColor = Array.from(document.querySelectorAll('a'));
+naviColor.forEach(element => {
+  element.style.color = 'green';
+});
+
+var newNav1 = document.createElement("a");
+newNav1.textContent = "Practice";
+
+var newNav2 = document.createElement("a");
+newNav2.textContent = "Question";
+
+var newNavBar = document.querySelector('nav');
+newNavBar.prepend(newNav1);
+newNavBar.appendChild(newNav2);
